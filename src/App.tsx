@@ -1,9 +1,9 @@
 
-
 function App() {
   return (
     <div className="App">
      <h1>HOTEL MANAGEMENT</h1>
+    
     </div>
   );
 }
