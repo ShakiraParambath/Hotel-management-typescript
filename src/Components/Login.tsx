@@ -28,7 +28,7 @@ export const Login = () => {
           // Signed in
           console.log(userCredential.user);
         
-          const user = auth.currentUser;
+          // const user = auth.currentUser;
           const userRef = doc(firestore, "users", userCredential.user.uid);
           console.log(userRef)
   
