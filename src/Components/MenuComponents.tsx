@@ -73,8 +73,8 @@ console.log(data);
             SKY BOOKING.COM
           </Typography>
           <div className={classes.navLink}>
-            <Link to={'/home'}className={classes.link}> HOTEL LIST </Link>
-            <Link to={'/home'}   
+            <Link to={'/home/list'}className={classes.link}> HOTEL LIST </Link>
+            <Link to={'/home/booking'}   
             className={classes.link}> BOOKING DETAILS </Link>
            <IconButton
             onClick={handleClick}
