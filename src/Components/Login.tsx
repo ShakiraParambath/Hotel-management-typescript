@@ -11,7 +11,9 @@ export const Login = () => {
     const navigate = useNavigate();
     const[password,setPassword] = useState("");
     const [error, setError] = useState("");
-
+    const login_user = {
+      userName:email,
+  }
      // initialised auth instance
   const auth = getAuth(firebaseApp);
  
@@ -27,6 +29,7 @@ export const Login = () => {
         .then (async (userCredential) => {
           // Signed in
           console.log(userCredential.user);
+          sessionStorage.setItem("login-user",JSON.stringify(login_user));
         
           // const user = auth.currentUser;
           const userRef = doc(firestore, "users", userCredential.user.uid);
