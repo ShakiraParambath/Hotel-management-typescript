@@ -1,122 +1,113 @@
 {
-    "HotelData": [
-      {
-        "id": 1,
-        "code": "002",
-        "name": " Chandys Windy Woods",
-        "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
-        "Location": "Munnar",
-        "contact": "1111-222-333",
-        "amount": "1450",
-        "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-        "userName": "hotel1@gmail.com"
-      },
-      {
-        "id": 2,
-        "code": "003",
-        "name": " The Leela Kovalam, a Raviz Hotel",
-        "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Thrissur, India, 685565",
-        "Location": "Thrissur",
-        "contact": "1111-222-333",
-        "amount": "1650",
-        "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-        "userName": "hotel2@gmail.com"
-      },
-      {
-        "id": 3,
-        "code": "001",
-        "name": " Blanket Hotel & Spa",
-        "Location": "Kozhikode",
-        "address": "Attukad Waterfall Road, Pallivasal, Kozhikode, India, 685612 ",
-        "contact": "000-000-000",
-        "amount": "1500",
-        "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-        "userName": "hotel3@gmail.com"
-      },
-      {
-        "id": 4,
-        "code": "004",
-        "name": "  Le Meridien Kochi",
-        "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
-        "Location": "Kochi",
-        "contact": "1111-222-333",
-        "amount": "1500",
-        "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-        "userName": "hotel4@gmail.com"
-      },
-      {
-        "id": 5,
-        "code": "005",
-        "name": " Trident, Cochin",
-        "Location": "kochi",
-        "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
-        "contact": "1111-222-333",
-        "amount": "1350",
-        "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-        "userName": "hotel5@gmail.com"
-      },
-      {
-        "id": 6,
-        "code": "008",
-        "name": "Vythiri Village Resort",
-        "Location": "Munnar",
-        "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
-        "contact": "1111-222-333",
-        "amount": "1350",
-        "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-        "userName": "hotel6@gmail.com"
-      },
-      {
-        "id": 7,
-        "code": "006",
-        "name": " The Raviz Ashtamudi",
-        "Location": "Trivandrum",
-        "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
-        "contact": "1111-222-333",
-        "amount": "1550",
-        "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-        "userName": "hotel7@gmail.com"
-      },
-      {
-        "id": 8,
-        "code": "007",
-        "name": " The Lalit Resort & Spa Bekal",
-        "Location": "Kannur",
-        "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
-        "contact": "1111-222-333",
-        "amount": "1200",
-        "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-        "userName": "hotel8@gmail.com"
-      }
-    ],
-    "BookingData": [
-      {
-        "id": 1,
-        "HotelName": "abc hoteel",
-        "checkIN": "10/25/2021",
-        "checkOut": "10/30/2021",
-        "No_of_Rooms": 2,
-        "Amount": 2500,
-        "user": "johne k"
-      },
-      {
-        "id": 2,
-        "HotelName": "abc hoteel",
-        "checkIN": "10/25/2021",
-        "checkOut": "10/30/2021",
-        "No_of_Rooms": 2,
-        "Amount": 2500,
-        "user": "jack Daniel"
-      },
-      {
-        "id": 4,
-        "HotelName": " Chandys Windy Woods",
-        "checkIN": "2023-09-16T15:12",
-        "checkOut": "2023-09-17T15:12",
-        "No_of_Rooms": "2",
-        "Amount": 1450,
-        "user": "shakira pp",
-        "userName": "testman1@mailinator.com"
-      }
-    ]
-  }
+  "HotelData": [
+    {
+      "id": 1,
+      "code": "002",
+      "name": " Chandys Windy Woods",
+      "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
+      "Location": "Munnar",
+      "contact": "1111-222-333",
+      "amount": "1450",
+      "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      "userName": "hotel1@gmail.com"
+    },
+    {
+      "id": 2,
+      "code": "003",
+      "name": " The Leela Kovalam, a Raviz Hotel",
+      "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Thrissur, India, 685565",
+      "Location": "Thrissur",
+      "contact": "1111-222-333",
+      "amount": "1650",
+      "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      "userName": "hotel2@gmail.com"
+    },
+    {
+      "id": 3,
+      "code": "001",
+      "name": " Blanket Hotel & Spa",
+      "Location": "Kozhikode",
+      "address": "Attukad Waterfall Road, Pallivasal, Kozhikode, India, 685612 ",
+      "contact": "000-000-000",
+      "amount": "1500",
+      "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      "userName": "hotel3@gmail.com"
+    },
+    {
+      "id": 4,
+      "code": "004",
+      "name": "  Le Meridien Kochi",
+      "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
+      "Location": "Kochi",
+      "contact": "1111-222-333",
+      "amount": "1500",
+      "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      "userName": "hotel4@gmail.com"
+    },
+    {
+      "id": 5,
+      "code": "005",
+      "name": " Trident, Cochin",
+      "Location": "kochi",
+      "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
+      "contact": "1111-222-333",
+      "amount": "1350",
+      "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      "userName": "hotel5@gmail.com"
+    },
+    {
+      "id": 6,
+      "code": "008",
+      "name": "Vythiri Village Resort",
+      "Location": "Munnar",
+      "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
+      "contact": "1111-222-333",
+      "amount": "1350",
+      "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      "userName": "hotel6@gmail.com"
+    },
+    {
+      "id": 7,
+      "code": "006",
+      "name": " The Raviz Ashtamudi",
+      "Location": "Trivandrum",
+      "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
+      "contact": "1111-222-333",
+      "amount": "1550",
+      "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      "userName": "hotel7@gmail.com"
+    },
+    {
+      "id": 8,
+      "code": "007",
+      "name": " The Lalit Resort & Spa Bekal",
+      "Location": "Kannur",
+      "address": "Meencut, Chittirapuram P.O, Chekuthan Mukku, Munnar, India, 685565",
+      "contact": "1111-222-333",
+      "amount": "1200",
+      "description": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      "userName": "hotel8@gmail.com"
+    }
+  ],
+  "BookingData": [
+    {
+      "id": 1,
+      "HotelName": "abc hoteel",
+      "checkIN": "10/25/2021",
+      "checkOut": "10/30/2021",
+      "No_of_Rooms": 2,
+      "Amount": 2500,
+      "user": "johne k"
+    },
+    {
+      "id": 2,
+      "HotelName": "abc hoteel",
+      "checkIN": "10/25/2021",
+      "checkOut": "10/30/2021",
+      "No_of_Rooms": 2,
+      "Amount": 2500,
+      "user": "jack Daniel"
+    }
+   
+  ]
+}
