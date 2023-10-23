@@ -5,8 +5,8 @@ import { Grid } from '@mui/material';
 import HotelList from './HotelList';
 import HotelDetails from './HotelDetails';
 import HotelBookingDetails from './HotelBookingDetails'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+// import { BrowserRouter, Routes, Route ,} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default function HomeComponent() {
     return (
@@ -15,14 +15,15 @@ export default function HomeComponent() {
                 <MenuComponent />
                 <Grid>
                 <Routes>
-                <Route path="/home/list" element={<HotelList />}/>
+                     <Route path="/" element={<HotelList />}/>
                <Route
-              path="/home/hoteldetails"
+              path="hoteldetails"
               element={<HotelDetails/>}
             />
             
-            <Route path="/home/booking" element={<HotelBookingDetails/>} />
-            </Routes>  
+            <Route path="booking" element={<HotelBookingDetails/>} /> 
+                </Routes>
+         
             </Grid>
             </div>
         </div>

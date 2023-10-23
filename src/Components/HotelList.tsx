@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import AddHotel from './AddHotel';
 import { Delete, Edit } from '@mui/icons-material';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { place } from '../MockData/place';
 
 const useStyles = makeStyles(() => ({
   TextField: {
@@ -53,10 +56,17 @@ const HotelList: React.FC = () => {
   const [hotel, setHotel] = useState<any[]>([]);
   const [delId, setDelId] = useState<string>('');
 
-  useEffect(() => {
-    // Your code here
-  }, [open]);
-
+  
+    useEffect(() => {
+      fetch('http://localhost:3000/HotelData').then(response => response.json())
+        .then(response => {
+          console.log(response, 'response');
+          setData(response);
+          setHotel(response);
+          sessionStorage.setItem("HotelData", JSON.stringify(response));
+        })
+    }, [open]);
+ 
   function changeState(value: boolean) {
     setOpen(value);
   }
@@ -65,10 +75,7 @@ const HotelList: React.FC = () => {
     setEdit(value);
   }
 
-//   function handleLocation(event: React.ChangeEvent<{ value: string }>) {
-//     setLocation(event.target.value as string);
-//     filteredLocation(event.target.value as string);
-//   }
+
 function handleLocation(event: SelectChangeEvent<string>, child: React.ReactNode) {
     setLocation(event.target.value);
     filteredLocation(event.target.value);
@@ -94,11 +101,24 @@ function handleLocation(event: SelectChangeEvent<string>, child: React.ReactNode
     setData(filteredList);
   };
 
-  const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
+ 
+  const handleDelete = async (e: any) => {
     e.preventDefault();
-    // Your code here
-  };
-
+    fetch('http://localhost:3000/HotelData/' + delId, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: null
+    }).then(response => response.json()).then(response => {
+      console.log(response)
+      setDialog(false);
+      const datas = data?.filter((item: any) => item.code !== select.code);
+      setData(datas);
+      sessionStorage.setItem("data", JSON.stringify(datas));
+    });
+  }
+console.log(place)
   const DeleteDialog = () => {
     return (
       <Dialog open={dialog} onClose={() => setDialog(false)}>
@@ -152,6 +172,9 @@ function handleLocation(event: SelectChangeEvent<string>, child: React.ReactNode
               <em>All</em>
             </MenuItem>
             {/* Place Menu Items */}
+            {place?.map((item: string) => {
+              return <MenuItem value={item} key={item}>{item}</MenuItem>;
+            })}
           </Select>
         </FormControl>
         {Role === 'Admin' && (
@@ -169,7 +192,7 @@ function handleLocation(event: SelectChangeEvent<string>, child: React.ReactNode
             data?.map((item:any) => {
               return (
                 <ListItem>
-                  <ListItem component={Link} to="/home/hoteldetails" onClick={() => { window.location.href = '/home/hoteldetails'; sessionStorage.setItem('CurrentIndex', JSON.stringify(item)); }}>
+                  <ListItem component={Link} to="/home/hoteldetails" onClick={() => { sessionStorage.setItem('CurrentIndex', JSON.stringify(item)); }}>
                     <ListItemText className={classes.listItem}>
                       <span className={classes.name}>{item.name}</span>
                       <span className={classes.location}>{item.Location}</span>
@@ -194,6 +217,7 @@ function handleLocation(event: SelectChangeEvent<string>, child: React.ReactNode
         </List>
         <DeleteDialog />
       </Box>
+      <ToastContainer />
     </Grid>
   );
 };

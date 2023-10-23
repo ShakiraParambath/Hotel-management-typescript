@@ -13,6 +13,7 @@ import Logout from '@mui/icons-material/Logout';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
     link: {
@@ -33,6 +34,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 export default function MenuComponents() {
+  const navigate = useNavigate();
     const value: string | null = sessionStorage.getItem("login-user");
     let data;
     if(value !== null)
@@ -55,7 +57,7 @@ export default function MenuComponents() {
       await signOut(auth).then(() => {
         // Sign-out successful.
         setAnchorEl(null);
-        window.location.href = '/'
+        navigate('/');
       }).catch((err) => {
         // An error happened.
         console.log(err.code);
@@ -73,7 +75,7 @@ console.log(data);
             SKY BOOKING.COM
           </Typography>
           <div className={classes.navLink}>
-            <Link to={'/home/list'}className={classes.link}> HOTEL LIST </Link>
+            <Link to={'/home'}className={classes.link}> HOTEL LIST </Link>
             <Link to={'/home/booking'}   
             className={classes.link}> BOOKING DETAILS </Link>
            <IconButton
@@ -121,9 +123,6 @@ console.log(data);
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
-        </MenuItem>
         <MenuItem onClick={handleSignOut}>
           <ListItemIcon>
             <Logout fontSize="small" />
