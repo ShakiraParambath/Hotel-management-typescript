@@ -67,48 +67,46 @@ export const Login = () => {
     };
 
     return (
-    <div  data-testid='login'>  
-    <form autoComplete="off" onSubmit={handleSubmit} style={{justifyContent:'center' ,width:'650px' , border:"2px solid black" ,   borderRadius:"30px"}}>
-       <img src={logo} style={{width:"300px", height:"250px"}} alt="sky booking.com"/>
-        <h2 style={{fontFamily:'sans-serif' , marginTop:0}}>Sign into Your Account</h2>
-        <div className="email-input">
+    <div  data-testid='login' className="flex justify-center ...">  
+    <br/>
+    <form autoComplete="off" onSubmit={handleSubmit} className="justify-center w-650 border-2 border-black rounded-30">
+       <img src={logo} className="w-300 h-250 ml-156" alt="sky booking.com"/>
+        <h2 className=" font-serif	mt-0 text-center ..." >Sign into Your Account</h2>
+        <div>
       <input
         name="email"
         placeholder="Enter email"
         type="text"
         onChange={(e)=>setEmail(e.target.value)}
         value={email}
-        style={{ width: "450px" , height:'50px',marginLeft:'100px'}} 
+        className="w-450 h-50 ml-100"
         required
         autoComplete="true"
       />
       
     </div>
     <br/>
-    <div className="password-input">
+    <div >
       <input
         name="password"
         placeholder="Enter password"
         onChange={(e)=>setPassword(e.target.value)}
         value={password}
-        style={{ width: "450px" , height:'50px',marginLeft:'100px'}} 
+        className="w-450 h-50 ml-100"
         type="password"
         required
         autoComplete="true"
       />
     </div>
              <div className="option">
-    <p>
+    <p className="font-serif text-center ...">
       Don't have an account?&nbsp;&nbsp;
-      <Link to="/signup" >Sign Up</Link>
+      <Link to="/signup" className="text-blue-600 underline underline-offset-1 ...">Sign Up</Link>
     </p>
   </div>
-    <div className="btn" data-testid="button">
-      {error ? <p className="login-error" style={{color:"red"}}>{error}</p> : null}
-      <button title="Login" aria-label="Login" type="submit"  style={{marginLeft:'53px',backgroundColor: '#008CBA',border: "none",
-color: "white",
-padding: "15px 32px",
-fontSize:"18px"}} >
+  {error ? <p className="text-center text-red-600 " >{error}</p> : null}
+    <div className="flex justify-center ..." data-testid="button">
+      <button  title="Login" aria-label="Login" type="submit"  className="w-32 ml-14 bg-blue-500 border-0 text-white text-xl" >
         Sign In
       </button>
     </div>
