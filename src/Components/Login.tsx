@@ -69,9 +69,10 @@ export const Login = () => {
     return (
     <div  data-testid='login' className="flex justify-center ...">  
     <br/>
-    <form autoComplete="off" onSubmit={handleSubmit} className="justify-center w-650 border-2 border-black rounded-30">
+    <form autoComplete="off" onSubmit={handleSubmit} className="justify-center mt-8  w-650 border-2 border-black rounded-30">
        <img src={logo} className="w-300 h-250 ml-156" alt="sky booking.com"/>
         <h2 className=" font-serif	mt-0 text-center ..." >Sign into Your Account</h2>
+        <br/>
         <div>
       <input
         name="email"
@@ -79,7 +80,7 @@ export const Login = () => {
         type="text"
         onChange={(e)=>setEmail(e.target.value)}
         value={email}
-        className="w-450 h-50 ml-100"
+        className="w-450 h-50 ml-100 block text-gray-700  font-bold"
         required
         autoComplete="true"
       />
@@ -92,18 +93,21 @@ export const Login = () => {
         placeholder="Enter password"
         onChange={(e)=>setPassword(e.target.value)}
         value={password}
-        className="w-450 h-50 ml-100"
+        className="w-450 h-50 ml-100 block text-gray-700  font-bold"
         type="password"
         required
         autoComplete="true"
       />
     </div>
+
+    <br/>
              <div className="option">
     <p className="font-serif text-center ...">
       Don't have an account?&nbsp;&nbsp;
       <Link to="/signup" className="text-blue-600 underline underline-offset-1 ...">Sign Up</Link>
     </p>
   </div>
+  <br/>
   {error ? <p className="text-center text-red-600 " >{error}</p> : null}
     <div className="flex justify-center ..." data-testid="button">
       <button  title="Login" aria-label="Login" type="submit"  className="w-32 ml-14 bg-blue-500 border-0 text-white text-xl" >
