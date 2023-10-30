@@ -8,42 +8,9 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { place } from '../MockData/place';
 
-const useStyles = makeStyles(() => ({
-  TextField: {
-    margin: '10px',
-    minWidth: 200,
-  },
-  formControl: {
-    width: '160px',
-  },
-  root: {
-    width: '100%',
-  },
-  inline: {
-    display: 'inline',
-  },
-  name: {
-    fontSize: '19px',
-    color: '#FF0080',
-  },
-  location: {
-    fontSize: '13px',
-    margin: '10px',
-    color: '#08088A',
-  },
-  listItem: {
-    backgroundColor: '#E3CEF6',
-    height: '50px',
-    padding: '10px',
-  },
-  delete: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-  },
-}));
+
 
 const HotelList: React.FC = () => {
-  const classes = useStyles();
   const [location, setLocation] = useState<string>('');
   const [search, setSearch] = useState<string>('');
   const [data, setData] = useState<any>('');
@@ -139,7 +106,7 @@ console.log(place)
   return (
     <Grid data-testid="list">
       <br />
-      <Typography variant="h4" align="center" style={{ color: '#08088A' }}>
+      <Typography variant="h4" align="center" className='text-[#08088A]'>
         Hotel List
       </Typography>
       <br />
@@ -156,9 +123,9 @@ console.log(place)
           label="Search by Name"
           onChange={handleSearch}
           value={search}
-          className={classes.TextField}
+          className='m-2 min-w-[200px]'
         ></TextField>
-        <FormControl className={classes.formControl} variant="standard" sx={{ m: 1, minWidth: 120 }}>
+        <FormControl className='w-[160px]' variant="standard" sx={{ m: 1, minWidth: 120 }}>
           <InputLabel id="demo-simple-select-standard-label">Filter By Location</InputLabel>
           <Select
             labelId="demo-simple-select-standard-label"
@@ -187,23 +154,23 @@ console.log(place)
         <AddHotel open={open} setOpen={changeState} edit={edit} code={code} setEdit={changeEditState} />
       </Grid>
       <Box>
-        <List className={classes.root}>
+        <List className='w-full'>
           {data?.length ? (
             data?.map((item:any) => {
               return (
                 <ListItem>
                   <ListItem component={Link} to="/home/hoteldetails" onClick={() => { sessionStorage.setItem('CurrentIndex', JSON.stringify(item)); }}>
-                    <ListItemText className={classes.listItem}>
-                      <span className={classes.name}>{item.name}</span>
-                      <span className={classes.location}>{item.Location}</span>
+                    <ListItemText className='bg-purple-200 h-12 p-2'>
+                      <span className='text-[19px] text-pink-500'>{item.name}</span>
+                      <span className='text-[13px] m-2 text-[#08088A]'>{item.Location}</span>
                     </ListItemText>
                   </ListItem>
                   {Role === 'Admin' && (
                     <ListItem style={{ width: '120px' }}>
-                      <ListItemText className={classes.delete}>
-                        <Edit style={{ marginRight: '15px' }} onClick={() => { setOpen(true); setEdit(true); setCode(item.id); }} />
+                      <ListItemText className='flex justify-end'>
+                        <Edit className='mr-[15px]' onClick={() => { setOpen(true); setEdit(true); setCode(item.id); }} />
                       </ListItemText>
-                      <ListItemText className={classes.delete}>
+                      <ListItemText className='flex justify-end'>
                         <Delete onClick={() => { setDialog(true); setSelected(item); setDelId(item.id); }} />
                       </ListItemText>
                     </ListItem>

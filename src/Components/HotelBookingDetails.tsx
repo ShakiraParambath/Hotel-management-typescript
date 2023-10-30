@@ -90,7 +90,7 @@ const HotelBookingDetails: React.FC<HotelBookingDetailsProps> = () => {
   return (
     <Grid data-testid="table">
       <br />
-      <Typography variant="h4" align="center" style={{ color: "#08088A" }}>
+      <Typography variant="h4" align="center" className='text-[#08088A]'>
         Hotel Booking Details
       </Typography>
       <br />

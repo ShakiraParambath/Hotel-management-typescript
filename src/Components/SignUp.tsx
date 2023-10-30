@@ -54,33 +54,19 @@ export const SignUp = () => {
  
 
     return (
-//         <div>
-//         <form onSubmit={handleSubmit}>
-//         <p>Please select your Role:</p>
-//         <input type="radio" id="Admin" name="role" value="Admin" style={{marginLeft:"18px"}} onClick={()=>setRole("Admin")}/>
-//         <label htmlFor="Admin">Admin</label><br/>
-//         <input type="radio" id="Hotel-admin" name="role" value="Hotel-admin" style={{marginLeft:"54px"}} onClick={()=>setRole("Hotel-Admin")}/>
-//         <label htmlFor="Hotel-admin">Hotel-admin</label><br/>
-//         <input type="radio" id="User" name="role" value="User" style={{marginRight:"0px"}} onClick={()=>setRole("User")}/>
-//         <label htmlFor="User">User</label>     
-//           <br/>
-//             <input type="text" name="email" value={email} placeholder="enter email"  onChange={(e:ChangeEvent<HTMLInputElement>)=>{setEmail(e.currentTarget.value)}}/><br/>
-//             <input type ="password" name="password" value={password} placeholder="enter password"  onChange={(e)=>setPassword(e.target.value)}/><br/>
-//             <button type="submit">Sign Up</button>
-//         </form>
-//     </div>
-<div  data-testid="sign-up">
-<form autoComplete="off" className="form" onSubmit={handleSubmit}style={{justifyContent:'center' ,width:'650px' , border:"2px solid black" ,   borderRadius:"30px"}} >
-  <img src={logo} style={{width:"300px", height:"250px" ,marginLeft:'1px'}} alt="sky booking.com" />
-  <h2  >Sign Up</h2>
-  <p style={{marginLeft:'43px'}}>Fill the form below to create your account.</p>
-  <div style={{marginRight:"257px"}} >
-  <p>Please select your Role:</p>
-        <input type="radio" id="Admin" name="role" value="Admin" style={{marginLeft:"18px"}} onClick={()=>setRole("Admin")}/>
+<div  data-testid="sign-up" className="flex justify-center ...">
+<form autoComplete="off" onSubmit={handleSubmit} className="justify-center mt-8 w-650 border-2 border-black rounded-30" >
+  <img src={logo} className="w-300 h-250 ml-156" alt="sky booking.com" />
+  <h2 className=" font-serif	mt-0 text-center ..." >Sign Up</h2>
+  <p className=" font-serif	mt-0 text-center ...">Fill the form below to create your account.</p>
+  <br/>
+  <div className="flex justify-center  gap-4 ..." >
+  <p className=" font-serif	mt-0 text-center  ...">Select Role  &nbsp;:</p>
+        <input type="radio" id="Admin" name="role" value="Admin"  onClick={()=>setRole("Admin")}/>
         <label htmlFor="Admin">Admin</label><br/>
-        <input type="radio" id="Hotel-admin" name="role" value="Hotel-admin" style={{marginLeft:"54px"}} onClick={()=>setRole("Hotel-Admin")}/>
+        <input type="radio" id="Hotel-admin" name="role" value="Hotel-admin" onClick={()=>setRole("Hotel-Admin")}/>
         <label htmlFor="Hotel-admin">Hotel-admin</label><br/>
-        <input type="radio" id="User" name="role" value="User" style={{marginRight:"0px"}} onClick={()=>setRole("User")}/>
+        <input type="radio" id="User" name="role" value="User"  onClick={()=>setRole("User")}/>
         <label htmlFor="User">User</label>     
     <br/>
     <br/>
@@ -92,12 +78,11 @@ export const SignUp = () => {
       type="text"
       onChange={(e:ChangeEvent<HTMLInputElement>)=>{setEmail(e.currentTarget.value)}}
       value={email}
-      style={{ width: "450px",height:'50px',marginLeft:'39px'}} 
+      // style={{ width: "450px",height:'50px',marginLeft:'39px'}} 
+      className="w-450 h-50 ml-100 block text-gray-700  font-bold"
       required
       // autoComplete="true"
     />
-   
-    <br/>
     <br/>
   </div>
   <div className="password-input">
@@ -107,22 +92,25 @@ export const SignUp = () => {
       onChange={(e)=>setPassword(e.target.value)}
       value={password}
       type="password"
-      style={{ width: "450px" , height:'50px',marginLeft:'39px'}} 
+      // style={{ width: "450px" , height:'50px',marginLeft:'39px'}} 
+      className="w-450 h-50 ml-100 block text-gray-700  font-bold"
       required
       // autoComplete="true"
     />
     
   </div>
+  <br/>
   <div className="option">
-  <p  style={{marginLeft:'33px'}}>
+  <p className="font-serif text-center ...">
     Already have an account?&nbsp;&nbsp;
-    <Link to="/" >Sign in</Link>
+    <Link to="/" className="text-[#1976d2] underline underline-offset-1 ...">Sign in</Link>
   </p>
 </div>
-  <div className="btn" data-testid="button">
-    {error ? <p className="login-error" style={{color:"red"}}>{error}</p> : null}
-    <button  type="submit" style={{marginLeft:'50px',backgroundColor: '#008CBA',}}  >
-      Create account
+<br/>
+{error ? <p className="text-center text-red-600 " >{error}</p> : null}
+  <div className="flex justify-center ..." data-testid="button"> 
+    <button  type="submit" className="w-32 ml-14 bg-[#1976d2] border-0 text-white text-xl" >
+      Sign Up
     </button>
   </div>
   <br/>
