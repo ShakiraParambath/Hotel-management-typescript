@@ -1,29 +1,12 @@
 import React, { useState } from 'react';
 import { Box, Button, Card, CardContent, Grid, Chip, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import BookNow from "./BookNow";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const useStyles = makeStyles(() => ({
-    box: {
-        width: '600px',
-        align: "center",
-        marginLeft: "400px",
-    },
-    heading: {
-        color: "#FE2E64"
-    },
-    address: {
-        padding: "10px",
-    },
-    card: {
-        backgroundColor: "#FBEFEF",
-    }
-}));
+
 
 const HotelDetails: React.FC = () => {
-    const classes = useStyles();
     const [open, setOpen] = useState(false);
     const value: string | null = sessionStorage.getItem("CurrentIndex");
     let data;
@@ -40,20 +23,22 @@ const HotelDetails: React.FC = () => {
     return (
         <Grid data-testid="details">
             <br />
-            <Typography variant="h4" align="center" style={{ color: "#08088A" }}>Hotel Details</Typography>
+            <Typography variant="h4" align="center" className='text-[#08088A]'>Hotel Details</Typography>
             <br />
-            <Box className={classes.box}>
+            <Box className='w-600  ml-400 content-center ...'>
                 <Card variant="outlined" >
-                    <CardContent style={{ alignItems: "center" }} className={classes.card}>
-                        <Typography variant="h5" align="center" className={classes.heading}>{data?.name}</Typography>
-                        <Typography align="center" className={classes.address}>{data?.address}</Typography>
+                    <CardContent style={{ alignItems: "center" }} className='bg-[#FBEFEF]'>
+                        <Typography variant="h5" align="center" className='text-[#FE2E64]'>{data?.name}</Typography>
+                        <Typography align="center" className='p-10'>{data?.address}</Typography>
                         <Typography variant="body2" color="textSecondary" align="justify" component="p">{data?.description}</Typography>
 
-                        <Typography align="center" style={{ padding: "5px" }}>Contact : {data?.contact}</Typography>
-                        <Chip label={`${data?.amount}/day`} variant="filled" color="primary" style={{ marginLeft: "210px", fontSize: "18px", width: "100px" }} />
+                        <Typography align="center" className='p-[5px]'>Contact : {data?.contact}</Typography>
+                        <Chip label={`${data?.amount}/day`} variant="filled" color="primary" className='w-100 ml-[230px] text-xl'/>
                         <br />
                         <br />
-                        {Role === 'User' && <Button variant="contained" color="success" style={{ marginLeft: '210px' }} onClick={() => setOpen(true)}>Book Now</Button>}
+                        {Role === 'User' &&
+                        <div className='flex justify-center items-center'>
+                         <Button variant="contained" color="success"  onClick={() => setOpen(true)}>Book Now</Button></div>}
                         <BookNow open={open} setOpen={changeState} />
                         <ToastContainer />
                     </CardContent>

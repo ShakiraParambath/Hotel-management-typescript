@@ -124,16 +124,16 @@ const AddHotel: React.FC<AddHotelProps> = ({ open, setOpen, edit, code, setEdit 
   }
 
   return (
-    <Dialog open={open} onClose={handleClose} aria-labelledby="draggable-dialog-title" style={{ minWidth: '500px' }} data-testid="add-hotel">
-      <DialogTitle align="center" style={{ backgroundColor: '#1976d2', color: 'white' }}>
+    <Dialog open={open} onClose={handleClose} aria-labelledby="draggable-dialog-title" className='min-w-500'  data-testid="add-hotel">
+      <DialogTitle align="center" className='bg-[#1976d2] text-white-900'>
         {!edit ? 'Add New Hotel' : 'Edit Hotel details'}
       </DialogTitle>
-      <DialogContent style={{ minWidth: '500px', paddingLeft: '100px' }}>
+      <DialogContent  className='min-w-[500px] pl-[100px]'>
         <br />
         <TextField id="outlined-basic" label="Hotel Name" variant="outlined" value={name} onChange={(e) => setName(e.target.value)} />
         <br />
         <br />
-        <FormControl style={{ width: '220px' }} data-testid="select">
+        <FormControl className='w-[220px]' data-testid="select">
           <InputLabel>Select Location</InputLabel>
           <Select
             labelId="demo-select-small-label"
@@ -166,7 +166,7 @@ const AddHotel: React.FC<AddHotelProps> = ({ open, setOpen, edit, code, setEdit 
           multiline
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          style={{ width: '220px' }}
+          className='w-[220px]'
         />
         <br />
         <br />
@@ -176,7 +176,7 @@ const AddHotel: React.FC<AddHotelProps> = ({ open, setOpen, edit, code, setEdit 
           variant="outlined"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          style={{ width: '220px' }}
+          className='w-[220px]'
           type="phone"
           autoComplete="phone"
         />
@@ -188,13 +188,13 @@ const AddHotel: React.FC<AddHotelProps> = ({ open, setOpen, edit, code, setEdit 
           variant="outlined"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          style={{ width: '220px' }}
+          className='w-[220px]'
           type="email"
           autoComplete="email"
         />
         <br />
         <br />
-        <FormControl style={{ width: '220px' }}>
+        <FormControl className='w-[220px]'>
           <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
           <OutlinedInput
             id="outlined-adornment-amount"
@@ -215,7 +215,7 @@ const AddHotel: React.FC<AddHotelProps> = ({ open, setOpen, edit, code, setEdit 
           multiline
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          style={{ width: '220px' }}
+          className='w-[220px]'
         />
         <br />
         <br />

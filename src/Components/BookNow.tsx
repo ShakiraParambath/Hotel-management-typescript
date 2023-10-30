@@ -134,15 +134,15 @@ const BookNow: React.FC<BookNowProps> = ({ open, setOpen }) => {
     }, [checkIn, checkOut]);
 
     return (
-        <Dialog data-testid="booking" open={open} onClose={handleClose} aria-labelledby="draggable-dialog-title" style={{ minWidth: '500px' }}>
-            <DialogTitle align='center' style={{ backgroundColor: "#1976d2", color: "white" }}>Booking Details</DialogTitle>
-            <DialogContent style={{ minWidth: '500px', paddingLeft: '100px' }}>
+        <Dialog data-testid="booking" open={open} onClose={handleClose} aria-labelledby="draggable-dialog-title" className='min-w-500'>
+            <DialogTitle align='center' className='bg-[#1976d2] text-white-900'>Booking Details</DialogTitle>
+            <DialogContent className='min-w-[500px] pl-[100px]'>
                 <br />
                 <TextField id="outlined-basic" label="Name" variant="outlined" value={name} onChange={(e) => setName(e.target.value)} />
                 <br /><br />
-                <TextField id="outlined-basic" label="Enter Your Address" variant="outlined" multiline rows={2} value={address} onChange={(e) => setAddress(e.target.value)} style={{ width: "220px" }} />
+                <TextField id="outlined-basic" label="Enter Your Address" variant="outlined" multiline rows={2} value={address} onChange={(e) => setAddress(e.target.value)} className='w-[220px]' />
                 <br /><br />
-                <TextField id="outlined-basic" label="No:of Rooms" variant="outlined" type='number' value={count} onChange={(e) => setCount(e.target.value)} style={{ width: "220px" }} />
+                <TextField id="outlined-basic" label="No:of Rooms" variant="outlined" type='number' value={count} onChange={(e) => setCount(e.target.value)} className='w-[220px]' />
                 <br /><br />
                 <TextField
                     id="outlined-basic"
@@ -155,9 +155,9 @@ const BookNow: React.FC<BookNowProps> = ({ open, setOpen }) => {
                     value={checkIn}
                     onChange={(e) => setCheckIn(e.target.value)}
                     error={book}
-                    style={{ width: "220px" }}
+                    className='w-[220px]'
                 />
-                {book && <FormHelperText style={{ color: 'red' }}>This date is booked. Please choose another date !</FormHelperText>}
+                {book && <FormHelperText  style={{color:'red'}}>This date is booked. Please choose another date !</FormHelperText>}
                 <br /><br />
                 <TextField
                     id="outlined-basic"
@@ -169,13 +169,13 @@ const BookNow: React.FC<BookNowProps> = ({ open, setOpen }) => {
                     }}
                     value={checkOut}
                     onChange={(e) => setCheckOut(e.target.value)}
-                    style={{ width: "220px" }}
+                    className='w-[220px]'
                     error={out || invalid}
                 />
-                {out && <FormHelperText style={{ color: 'red' }}>This date is booked. Please choose another date !</FormHelperText>}
-                {invalid && <FormHelperText style={{ color: 'red' }}>Invalid date selection. Please choose another date !</FormHelperText>}
+                {out && <FormHelperText style={{color:'red'}}>This date is booked. Please choose another date !</FormHelperText>}
+                {invalid && <FormHelperText  style={{color:'red'}}>Invalid date selection. Please choose another date !</FormHelperText>}
                 <br /><br />
-                <TextField id="outlined-basic" label={"No:of days"} variant="outlined" disabled value={days ? `${days}` : ""} style={{ width: "220px" }} />
+                <TextField id="outlined-basic" label={"No:of days"} variant="outlined" disabled value={days ? `${days}` : ""} className='w-[220px]' />
                 <br /><br />
                 <Typography>Total Amount</Typography>
                 <Chip label={Amount ? `${Amount}` : ""} variant="filled" color='secondary' />

@@ -104,13 +104,13 @@ export const Login = () => {
              <div className="option">
     <p className="font-serif text-center ...">
       Don't have an account?&nbsp;&nbsp;
-      <Link to="/signup" className="text-blue-600 underline underline-offset-1 ...">Sign Up</Link>
+      <Link to="/signup" className="text-[#1976d2] underline underline-offset-1 ...">Sign Up</Link>
     </p>
   </div>
   <br/>
   {error ? <p className="text-center text-red-600 " >{error}</p> : null}
     <div className="flex justify-center ..." data-testid="button">
-      <button  title="Login" aria-label="Login" type="submit"  className="w-32 ml-14 bg-blue-500 border-0 text-white text-xl" >
+      <button  title="Login" aria-label="Login" type="submit"  className="w-32 ml-14 bg-[#1976d2] border-0 text-white text-xl" >
         Sign In
       </button>
     </div>
