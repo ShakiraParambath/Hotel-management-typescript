@@ -88,7 +88,7 @@ console.log(data);
             aria-expanded={open ? 'true' : undefined}
             className='ml-250'
           >
-            <Avatar sx={{ width: 32, height: 32 }} className='uppercase ...'>{data.userName.slice(0,2)}</Avatar>
+            <Avatar sx={{ width: 32, height: 32 }} className='uppercase ...'>{data?.userName ? data?.userName?.slice(0,2): 'TE'}</Avatar>
           </IconButton>
          
           <Menu
