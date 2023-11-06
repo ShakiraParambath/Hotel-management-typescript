@@ -131,7 +131,8 @@ const BookNow: React.FC<BookNowProps> = ({ open, setOpen }) => {
         dates.includes(val) ? setBook(true) : setBook(false);
         dates.includes(val2) ? setOut(true) : setOut(false);
         days < 1 ? setInvalid(true) : setInvalid(false);
-    }, [checkIn, checkOut]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },  [checkIn, checkOut]);
 
     return (
         <Dialog data-testid="booking" open={open} onClose={handleClose} aria-labelledby="draggable-dialog-title" className='min-w-500'>
