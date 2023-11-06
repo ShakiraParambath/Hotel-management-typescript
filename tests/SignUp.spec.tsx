@@ -6,14 +6,14 @@ test.describe('SignUp Page', () => {
 
   test('should sign up a new user', async ({page}) => {
     // Navigate to the SignUp page
-    await page.goto('http://localhost:3001/signup'); // Adjust the URL as needed
+    await page.goto('http://localhost:3001/signup'); 
    
     // Fill in the email and password fields
     await page.fill('input[name="email"]', 'test@example.com');
     await page.fill('input[name="password"]', 'testpassword');
 
     // Click the radio button for the desired role (e.g., Admin, Hotel-admin, User)
-    await page.click(`input[value="Admin"]`); // Adjust as needed
+    await page.click(`input[value="Admin"]`); 
 
     // Submit the form
     await page.click('button[type="submit"]');
@@ -34,9 +34,9 @@ test('Login form should display an error message on invalid login', async ({ pag
     await page.click('button[type="submit"]');
   
     // Wait for the error message to appear
-    await page.waitForSelector('.text-red-600'); // Adjust the selector as needed
+    await page.waitForSelector('.text-red-600'); 
   
     // Assert that the error message is displayed
     const errorMessage = await page.textContent('.text-red-600');
-    expect(errorMessage).toBe('The email address is already in use.'); // Adjust the expected error message
+    expect(errorMessage).toBe('The email address is already in use.'); 
   });
