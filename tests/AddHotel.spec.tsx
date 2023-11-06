@@ -1,0 +1,32 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('http://localhost:3001/');
+  await page.getByPlaceholder('Enter email').click();
+  await page.getByPlaceholder('Enter email').fill('admin1@gmail.com');
+  await page.getByPlaceholder('Enter password').click();
+  await page.getByPlaceholder('Enter password').fill('admin123');
+  await page.getByLabel('Login').click();
+  await page.getByRole('button', { name: 'Add Hotels' }).click();
+  await page.getByRole('heading', { name: 'Add New Hotel' }).click();
+  await page.getByLabel('Hotel Name').click();
+  await page.getByTestId('select').getByLabel('​').click();
+  await page.locator('#menu- div').first().click();
+  await page.getByLabel('Hotel Name').fill('royal plaza');
+  await page.getByTestId('select').getByLabel('​').click();
+  await page.getByRole('option', { name: 'Munnar' }).click();
+  await page.locator('div').filter({ hasText: /^Address$/ }).locator('#outlined-basic').click();
+  await page.locator('div').filter({ hasText: /^Address$/ }).locator('#outlined-basic').fill('malappuram district , ');
+  await page.locator('input[type="phone"]').click();
+  await page.locator('input[type="phone"]').fill('9188574806');
+  await page.locator('input[type="email"]').click();
+  await page.locator('input[type="email"]').fill('royal.plaza@gmail.com');
+  await page.getByLabel('Amount').click();
+  await page.getByLabel('Amount').fill('1200');
+  await page.locator('div').filter({ hasText: /^Description$/ }).locator('#outlined-basic').click();
+  await page.locator('div').filter({ hasText: /^Description$/ }).locator('#outlined-basic').fill('its a beatiful and nice hotel . ');
+  await page.locator('div').filter({ hasText: 'Add New HotelHotel NameHotel NameSelect LocationMunnarSelect LocationAddressmala' }).nth(1).click();
+  await page.getByRole('button', { name: 'ADD HOTEL' }).click();
+ await page.getByText('Add Hotels').click();
+await page.getByRole('button', { name: 'Cancel' }).click();
+});
