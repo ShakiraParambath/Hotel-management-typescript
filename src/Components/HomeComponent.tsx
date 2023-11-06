@@ -6,7 +6,7 @@ import HotelList from './HotelList';
 import HotelDetails from './HotelDetails';
 import HotelBookingDetails from './HotelBookingDetails'
 // import { BrowserRouter, Routes, Route ,} from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {  Routes, Route } from 'react-router-dom';
 
 export default function HomeComponent() {
     return (

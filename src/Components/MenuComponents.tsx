@@ -7,7 +7,6 @@ import { CssBaseline } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import {  signOut } from "firebase/auth";
 import {auth} from '../config/firebase'
-import { makeStyles } from '@mui/styles';
 import IconButton from '@mui/material/IconButton';
 import Logout from '@mui/icons-material/Logout';
 import Menu from '@mui/material/Menu';
@@ -15,23 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { useNavigate } from "react-router-dom";
 
-const useStyles = makeStyles(() => ({
-    link: {
-        textDecoration: "none",
-        color: "white",
-        fontSize: "20px",
-        marginTop:"10px",
-        marginLeft: "80px",
-        "&:hover": {
-          color: "yellow",
-          borderBottom: "1px solid white",
-        },
-      },
-    navLink:{
-        marginLeft: "250px",
-        display: "flex",
-    }
-}))
+
 
 export default function MenuComponents() {
   const navigate = useNavigate();
@@ -41,7 +24,7 @@ export default function MenuComponents() {
     {
         data=JSON.parse(value);
     }
-    const classes = useStyles();
+    
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
