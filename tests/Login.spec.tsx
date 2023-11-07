@@ -4,7 +4,7 @@ import { Login } from '../src/Components/Login'
 
 test('Login form should work correctly', async ({ page}) => {
     // Open your React app in the browser
-    await page.goto('http://localhost:3001'); // Replace with the actual URL of your app
+    await page.goto('http://localhost:3001'); 
   
     // Fill in the email and password fields
     await page.fill('input[name="email"]', 'your-email@example.com');
@@ -14,16 +14,15 @@ test('Login form should work correctly', async ({ page}) => {
     await page.click('button[type="submit" ]');
   
     // Assert that you are on the home page
-    expect(page.url()).toBe('http://localhost:3001/'); // Adjust the URL as needed
+    expect(page.url()).toBe('http://localhost:3001/'); 
   
-    // Optionally, you can close the browser after the test is complete
-    // await browser.close();
+    
   });
   
   
   test('Login form should display an error message on invalid login', async ({ page }) => {
     // Open your React app in the browser
-    await page.goto('http://localhost:3001'); // Replace with the actual URL of your app
+    await page.goto('http://localhost:3001'); 
     await page.getByPlaceholder('Enter email').click();
     await page.getByPlaceholder('Enter email').fill('testman@gmail.com');
     await page.getByPlaceholder('Enter password').click();
